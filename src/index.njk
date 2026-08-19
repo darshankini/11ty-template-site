@@ -1,0 +1,49 @@
+---
+title: Home
+layout: base.njk
+---
+
+<section class="slider" aria-label="Featured">
+    <div class="slides">
+        <div class="slide"><img src="/assets/slider-1.svg" alt="Ideas worth reading"></div>
+        <div class="slide"><img src="/assets/slider-2.svg" alt="Learn something new"></div>
+        <div class="slide"><img src="/assets/slider-3.svg" alt="Stories and tutorials"></div>
+    </div>
+    <button class="slider-btn prev" aria-label="Previous slide">&#8249;</button>
+    <button class="slider-btn next" aria-label="Next slide">&#8250;</button>
+    <div class="slider-dots"></div>
+</section>
+
+<section class="container section">
+    <h2 class="section-title">Recent Blogs</h2>
+    <div class="card-grid">
+        {% for post in collections.recent | limit(6) %}
+        <a class="card" href="{{ post.url }}">
+            <div class="card-img"><img src="{{ post.data.image }}" alt="{{ post.data.title }}"></div>
+            <div class="card-body">
+                <span class="badge">{{ post.data.category }}</span>
+                <h3 class="card-title">{{ post.data.title }}</h3>
+                <p class="card-date">{{ post.date | readableDate }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="container section section-alt">
+    <h2 class="section-title">Most Viewed</h2>
+    <ol class="popular-list">
+        {% for post in collections.popular | limit(5) %}
+        <li class="popular-item">
+            <span class="rank">{{ loop.index }}</span>
+            <a class="popular-thumb" href="{{ post.url }}">
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            </a>
+            <div class="popular-info">
+                <a href="{{ post.url }}"><h3 class="popular-title">{{ post.data.title }}</h3></a>
+                <p class="popular-meta">{{ post.data.category }} &middot; {{ post.data.views }} views</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
+</section>

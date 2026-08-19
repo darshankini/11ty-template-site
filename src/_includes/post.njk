@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+<article class="post container">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        <p class="post-meta">
+            <span class="badge">{{ category }}</span>
+            <span>By {{ author }}</span>
+            <span>&middot;</span>
+            <span>{{ date | readableDate }}</span>
+        </p>
+    </header>
+
+    {% if image %}
+    <img class="post-hero" src="{{ image }}" alt="{{ title }}">
+    {% endif %}
+
+    <div class="post-body">
+        {{ content | safe }}
+    </div>
+</article>
+
+{% set relatedPosts = collections.blog | related(page.url, category) %}
+{% if relatedPosts.length %}
+<section class="related container">
+    <h2 class="section-title">Related Blogs</h2>
+    <div class="related-grid">
+        {% for post in relatedPosts %}
+        <a class="related-card" href="{{ post.url }}">
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            <h3>{{ post.data.title }}</h3>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

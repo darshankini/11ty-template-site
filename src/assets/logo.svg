@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40">
+  <rect x="2" y="8" width="24" height="24" rx="6" fill="#4f46e5"/>
+  <path d="M9 20l4 4 8-8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="34" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">Dev<tspan fill="#4f46e5">Blog</tspan></text>
+</svg>

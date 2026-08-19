@@ -1,0 +1,34 @@
+---
+title: Contact Us
+layout: base.njk
+---
+
+<section class="container section">
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-subtitle">Have a question or want to work together? Send a message.</p>
+
+    <div class="contact-grid">
+        <form class="contact-form" onsubmit="return false;">
+            <label>Name
+                <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>Email
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>Subject
+                <input type="text" name="subject" placeholder="How can we help?">
+            </label>
+            <label>Message
+                <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
+            </label>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <aside class="contact-info">
+            <h3>Reach us</h3>
+            <p><strong>Email</strong><br>hello@devblog.example</p>
+            <p><strong>Phone</strong><br>+91 00000 00000</p>
+            <p><strong>Address</strong><br>123 Web Street,<br>Internet City</p>
+        </aside>
+    </div>
+</section>

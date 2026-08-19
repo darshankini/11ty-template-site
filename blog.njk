@@ -1,0 +1,25 @@
+---
+title: Blog
+layout: base.njk
+---
+
+<section class="container section">
+    <h1 class="page-title">The Blog</h1>
+    <p class="page-subtitle">Tutorials, guides, and thoughts on building for the web.</p>
+
+    <div class="blog-list">
+        {% for post in collections.recent | limit(10) %}
+        <a class="blog-row" href="{{ post.url }}">
+            <div class="blog-row-text">
+                <span class="badge">{{ post.data.category }}</span>
+                <h2 class="blog-row-title">{{ post.data.title }}</h2>
+                <p class="blog-row-date">{{ post.date | readableDate }}</p>
+                <p class="blog-row-desc">{{ post.data.excerpt }}</p>
+            </div>
+            <div class="blog-row-img">
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,23 @@
+{
+  "name": "11ty-template-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darshankini/11ty-template-site.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/darshankini/11ty-template-site/issues"
+  },
+  "homepage": "https://github.com/darshankini/11ty-template-site#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

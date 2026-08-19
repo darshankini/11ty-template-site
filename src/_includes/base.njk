@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} &middot; {{ site.name }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="/">
+                <img src="/assets/logo.svg" alt="{{ site.name }} logo" width="150" height="40">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav">
+                <ul>
+                    {% for item in site.nav %}
+                    <li>
+                        <a href="{{ item.url }}"
+                           class="{% if page.url == item.url %}active{% endif %}">{{ item.text }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>All rights reserved &copy; {{ year }} {{ site.name }}</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "DevBlog",
+  "nav": [
+    { "text": "Home", "url": "/" },
+    { "text": "Blog", "url": "/blog/" },
+    { "text": "Contact Us", "url": "/contact/" }
+  ]
+}
