@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} &middot; {{ site.name }}</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -39,5 +40,17 @@
     </footer>
 
     <script src="/script.js"></script>
+    <script>
+        // Redirect confirmed Netlify Identity users straight into the CMS
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", function (user) {
+                if (!user) {
+                    window.netlifyIdentity.on("login", function () {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
