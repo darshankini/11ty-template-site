@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: darshankini/11ty-template-site
   branch: main
 
 # Where uploaded images are stored (in the repo) and how they're referenced in posts
