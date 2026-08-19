@@ -3,7 +3,17 @@ backend:
   repo: darshankini/11ty-template-site
   branch: main
 
-# Where uploaded images are stored (in the repo) and how they're referenced in posts
+# Uploaded images go to Cloudinary's CDN (not the git repo).
+# cloud_name and api_key are PUBLIC/publishable values from your Cloudinary
+# dashboard -> Settings -> API Keys. The API *secret* is never used here and
+# must NOT be placed in this file.
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: YOUR_CLOUD_NAME
+    api_key: YOUR_API_KEY
+
+# Fallback local folder (used only if Cloudinary is unavailable or for non-image files)
 media_folder: "src/assets"
 public_folder: "/assets"
 
